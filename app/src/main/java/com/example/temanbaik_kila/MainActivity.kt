@@ -1,0 +1,40 @@
+package com.example.temanbaik_kila
+
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+
+        // Tampilkan HomeFragment secara default saat aplikasi pertama dibuka
+        if (savedInstanceState == null) {
+            loadFragment(HomeFragment())
+        }
+
+        // Listener untuk perpindahan tab Bottom Navigation
+        bottomNav.setOnItemSelectedListener { item ->
+            val fragment: Fragment = when (item.itemId) {
+                R.id.navigation_home -> HomeFragment()
+                R.id.navigation_event -> EventFragment()
+                R.id.navigation_history -> HistoryFragment()
+                R.id.navigation_profile -> ProfileFragment()
+                else -> HomeFragment()
+            }
+            loadFragment(fragment)
+            true
+        }
+    }
+
+    private fun loadFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.nav_host_fragment, fragment)
+            .commit()
+    }
+}

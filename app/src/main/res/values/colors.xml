@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Warna Utama Teman Baik -->
+    <color name="teal_primary">#14665A</color>
+    <color name="amber_accent">#F5A623</color>
+    <color name="tinta_dark">#12302B</color>
+    <color name="krem_bg">#F8F5EC</color>
+
+    <!-- Warna Tambahan / Neutral -->
+    <color name="white">#FFFFFF</color>
+    <color name="gray_text">#757575</color>
+    <color name="gray_bg">#F5F5F5</color>
+    <color name="green_status">#4CAF50</color>
+    <color name="red_status">#F44336</color>
+</resources>
