@@ -11,13 +11,13 @@
         android:orientation="vertical"
         android:padding="20dp">
 
-        <!-- Header Ucapan -->
+        <!-- Greeting -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Halo, Kila"
             android:textColor="@color/tinta_dark"
-            android:textSize="22sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
@@ -26,16 +26,16 @@
             android:layout_marginTop="2dp"
             android:text="Mau berbagi apa hari ini?"
             android:textColor="@color/gray_text"
-            android:textSize="14sp" />
+            android:textSize="13sp" />
 
-        <!-- Banner Utama -->
-        <androidx.cardview.widget.CardView
+        <!-- Banner Card -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="16dp"
             app:cardBackgroundColor="@color/teal_primary"
             app:cardCornerRadius="16dp"
-            app:cardElevation="0dp">
+            app:strokeWidth="0dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -48,96 +48,67 @@
                     android:layout_height="wrap_content"
                     android:text="Bersama untuk masa depan yang lebih baik"
                     android:textColor="@color/white"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="6dp"
                     android:text="Donasi pendidikan, kesehatan, dan bencana."
-                    android:textColor="#E0F2F1"
+                    android:textColor="#D0E8E4"
                     android:textSize="12sp" />
 
                 <Button
-                    android:id="@+id/btn_donasi_now"
+                    android:id="@+id/btn_donasi_sekarang"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="12dp"
                     android:backgroundTint="@color/amber_accent"
                     android:text="Donasi sekarang"
                     android:textAllCaps="false"
                     android:textColor="@color/tinta_dark"
+                    android:textSize="13sp"
                     android:textStyle="bold"
                     app:cornerRadius="8dp" />
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
-        <!-- Kategori Filter -->
-        <HorizontalScrollView
+        <!-- Search Bar -->
+        <EditText
+            android:id="@+id/et_search_donasi"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/white"
+            android:drawableStart="@android:drawable/ic_menu_search"
+            android:drawablePadding="12dp"
+            android:hint="Cari program donasi..."
+            android:inputType="text"
+            android:paddingHorizontal="16dp"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_no_result"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:scrollbars="none">
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="Program donasi tidak ditemukan"
+            android:textColor="@color/gray_text"
+            android:textSize="14sp"
+            android:visibility="gone" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:backgroundTint="@color/teal_primary"
-                    android:text="Semua"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    app:cornerRadius="20dp" />
-
-                <Button
-                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:backgroundTint="#E0F2F1"
-                    android:text="Pendidikan"
-                    android:textAllCaps="false"
-                    android:textColor="@color/teal_primary"
-                    app:cornerRadius="20dp" />
-
-                <Button
-                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:backgroundTint="#E0F2F1"
-                    android:text="Kesehatan"
-                    android:textAllCaps="false"
-                    android:textColor="@color/teal_primary"
-                    app:cornerRadius="20dp" />
-
-                <Button
-                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#E0F2F1"
-                    android:text="Bencana"
-                    android:textAllCaps="false"
-                    android:textColor="@color/teal_primary"
-                    app:cornerRadius="20dp" />
-            </LinearLayout>
-        </HorizontalScrollView>
-
-        <!-- Kartu 1: Bantuan Pendidikan -->
-        <androidx.cardview.widget.CardView
+        <!-- List Program Donasi -->
+        <!-- Card 1: Bantuan Pendidikan -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_pendidikan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="12dp"
-            app:cardElevation="1dp">
+            app:strokeWidth="0dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -146,18 +117,11 @@
                 android:orientation="horizontal"
                 android:padding="12dp">
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="0dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/sekolah" />
-                </androidx.cardview.widget.CardView>
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/sekolah" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -166,16 +130,18 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/tv_title_pendidikan"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Bantuan Pendidikan"
                         android:textColor="@color/tinta_dark"
+                        android:textSize="14sp"
                         android:textStyle="bold" />
 
                     <ProgressBar
                         style="?android:attr/progressBarStyleHorizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="8dp"
+                        android:layout_height="6dp"
                         android:layout_marginTop="6dp"
                         android:progress="45"
                         android:progressTint="@color/amber_accent" />
@@ -189,16 +155,17 @@
                         android:textSize="11sp" />
                 </LinearLayout>
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
-        <!-- Kartu 2: Korban Banjir -->
-        <androidx.cardview.widget.CardView
+        <!-- Card 2: Korban Banjir -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_banjir"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="12dp"
-            app:cardElevation="1dp">
+            app:strokeWidth="0dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -207,18 +174,11 @@
                 android:orientation="horizontal"
                 android:padding="12dp">
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="0dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/banjir" />
-                </androidx.cardview.widget.CardView>
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/banjir" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -227,16 +187,18 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/tv_title_banjir"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Korban Banjir"
                         android:textColor="@color/tinta_dark"
+                        android:textSize="14sp"
                         android:textStyle="bold" />
 
                     <ProgressBar
                         style="?android:attr/progressBarStyleHorizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="8dp"
+                        android:layout_height="6dp"
                         android:layout_marginTop="6dp"
                         android:progress="70"
                         android:progressTint="@color/amber_accent" />
@@ -250,16 +212,17 @@
                         android:textSize="11sp" />
                 </LinearLayout>
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
-        <!-- Kartu 3: Bantuan Makanan -->
-        <androidx.cardview.widget.CardView
+        <!-- Card 3: Bantuan Makanan -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_makanan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="12dp"
-            app:cardElevation="1dp">
+            app:strokeWidth="0dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -268,18 +231,11 @@
                 android:orientation="horizontal"
                 android:padding="12dp">
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="0dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/bantuan_makanan" />
-                </androidx.cardview.widget.CardView>
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bantuan_makanan" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -288,16 +244,18 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/tv_title_makanan"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Bantuan Makanan"
                         android:textColor="@color/tinta_dark"
+                        android:textSize="14sp"
                         android:textStyle="bold" />
 
                     <ProgressBar
                         style="?android:attr/progressBarStyleHorizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="8dp"
+                        android:layout_height="6dp"
                         android:layout_marginTop="6dp"
                         android:progress="20"
                         android:progressTint="@color/amber_accent" />
@@ -311,7 +269,7 @@
                         android:textSize="11sp" />
                 </LinearLayout>
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>
 </ScrollView>

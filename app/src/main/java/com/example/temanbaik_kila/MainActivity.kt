@@ -12,13 +12,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
-
-        // Tampilkan HomeFragment secara default saat aplikasi pertama dibuka
         if (savedInstanceState == null) {
             loadFragment(HomeFragment())
         }
-
-        // Listener untuk perpindahan tab Bottom Navigation
         bottomNav.setOnItemSelectedListener { item ->
             val fragment: Fragment = when (item.itemId) {
                 R.id.navigation_home -> HomeFragment()
