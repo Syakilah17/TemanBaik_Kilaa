@@ -28,58 +28,205 @@
             android:textColor="@color/gray_text"
             android:textSize="13sp" />
 
-        <!-- Banner Card -->
-        <com.google.android.material.card.MaterialCardView
+        <!-- Banner Card dengan Background Drawable Gradient -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            app:cardBackgroundColor="@color/teal_primary"
-            app:cardCornerRadius="16dp"
-            app:strokeWidth="0dp">
+            android:background="@drawable/bg_banner_gradient"
+            android:orientation="vertical"
+            android:padding="20dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="20dp">
+                android:text="Bersama untuk masa depan yang lebih baik"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Donasi pendidikan, kesehatan, dan bencana."
+                android:textColor="#D0E8E4"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btn_donasi_sekarang"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/amber_accent"
+                android:text="Donasi sekarang"
+                android:textAllCaps="false"
+                android:textColor="@color/tinta_dark"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:cornerRadius="8dp" />
+        </LinearLayout>
+
+        <!-- GRID MENU KATEGORI (2 Kolom) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="Kategori Pilihan"
+            android:textColor="@color/tinta_dark"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:columnCount="2"
+            android:rowCount="2">
+
+            <!-- Grid Item 1 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/grid_pendidikan"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="12dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Bersama untuk masa depan yang lebih baik"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="12dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/sekolah" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Pendidikan"
+                        android:textColor="@color/tinta_dark"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Grid Item 2 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/grid_bencana"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="12dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:text="Donasi pendidikan, kesehatan, dan bencana."
-                    android:textColor="#D0E8E4"
-                    android:textSize="12sp" />
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="12dp">
 
-                <Button
-                    android:id="@+id/btn_donasi_sekarang"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="12dp"
-                    android:backgroundTint="@color/amber_accent"
-                    android:text="Donasi sekarang"
-                    android:textAllCaps="false"
-                    android:textColor="@color/tinta_dark"
-                    android:textSize="13sp"
-                    android:textStyle="bold"
-                    app:cornerRadius="8dp" />
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/banjir" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Bencana Alam"
+                        android:textColor="@color/tinta_dark"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Grid Item 3 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/grid_makanan"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="12dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/bantuan_makanan" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Pangan &amp; Gizi"
+                        android:textColor="@color/tinta_dark"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Grid Item 4 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/grid_semua"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="12dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/medis" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Semua Program"
+                        android:textColor="@color/teal_primary"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </GridLayout>
 
         <!-- Search Bar -->
         <EditText
             android:id="@+id/et_search_donasi"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="16dp"
             android:background="@color/white"
             android:drawableStart="@android:drawable/ic_menu_search"
             android:drawablePadding="12dp"
@@ -99,177 +246,13 @@
             android:textSize="14sp"
             android:visibility="gone" />
 
-        <!-- List Program Donasi -->
-        <!-- Card 1: Bantuan Pendidikan -->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_pendidikan"
+        <!-- RECYCLERVIEW PROGRAM DONASI -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_donasi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="12dp"
-            app:strokeWidth="0dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:padding="12dp">
-
-                <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/sekolah" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/tv_title_pendidikan"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Bantuan Pendidikan"
-                        android:textColor="@color/tinta_dark"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
-
-                    <ProgressBar
-                        style="?android:attr/progressBarStyleHorizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="6dp"
-                        android:layout_marginTop="6dp"
-                        android:progress="45"
-                        android:progressTint="@color/amber_accent" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="Rp4.5jt dari Rp10jt"
-                        android:textColor="@color/gray_text"
-                        android:textSize="11sp" />
-                </LinearLayout>
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <!-- Card 2: Korban Banjir -->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_banjir"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="12dp"
-            app:strokeWidth="0dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:padding="12dp">
-
-                <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/banjir" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/tv_title_banjir"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Korban Banjir"
-                        android:textColor="@color/tinta_dark"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
-
-                    <ProgressBar
-                        style="?android:attr/progressBarStyleHorizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="6dp"
-                        android:layout_marginTop="6dp"
-                        android:progress="70"
-                        android:progressTint="@color/amber_accent" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="Rp7jt dari Rp10jt"
-                        android:textColor="@color/gray_text"
-                        android:textSize="11sp" />
-                </LinearLayout>
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <!-- Card 3: Bantuan Makanan -->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_makanan"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="12dp"
-            app:strokeWidth="0dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:padding="12dp">
-
-                <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/bantuan_makanan" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/tv_title_makanan"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Bantuan Makanan"
-                        android:textColor="@color/tinta_dark"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
-
-                    <ProgressBar
-                        style="?android:attr/progressBarStyleHorizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="6dp"
-                        android:layout_marginTop="6dp"
-                        android:progress="20"
-                        android:progressTint="@color/amber_accent" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="Rp1jt dari Rp5jt"
-                        android:textColor="@color/gray_text"
-                        android:textSize="11sp" />
-                </LinearLayout>
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
+            android:layout_marginTop="14dp"
+            android:nestedScrollingEnabled="false" />
 
     </LinearLayout>
 </ScrollView>
