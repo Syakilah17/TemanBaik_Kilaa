@@ -55,7 +55,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Username"
+                android:text="Email"
                 android:textColor="#12302B"
                 android:textSize="12sp"
                 android:textStyle="bold" />
@@ -66,8 +66,8 @@
                 android:layout_height="48dp"
                 android:layout_marginTop="6dp"
                 android:background="#FFFFFF"
-                android:hint="Masukkan username"
-                android:inputType="text"
+                android:hint="Masukkan email terdaftar"
+                android:inputType="textEmailAddress"
                 android:paddingHorizontal="12dp"
                 android:textColor="#12302B"
                 android:textSize="14sp" />
@@ -105,6 +105,18 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:cornerRadius="8dp" />
+
+            <!-- Tombol Pindah ke Register -->
+            <TextView
+                android:id="@+id/tv_to_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:gravity="center"
+                android:text="Belum punya akun? Daftar di sini"
+                android:textColor="#14665A"
+                android:textSize="13sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 

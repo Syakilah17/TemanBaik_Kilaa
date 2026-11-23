@@ -9,7 +9,10 @@ import android.widget.ImageView
 import android.widget.TextView
 
 data class HistoryModel(
+    val id: Long? = null,
+    val namaDonatur: String = "Kila",
     val judulProgram: String,
+    val nominal: Long = 0L,
     val detailNominalTanggal: String,
     val status: String,
     val iconRes: Int
@@ -17,7 +20,7 @@ data class HistoryModel(
 
 class HistoryCustomAdapter(
     private val context: Context,
-    private val dataList: List<HistoryModel>
+    private var dataList: List<HistoryModel>
 ) : BaseAdapter() {
 
     override fun getCount(): Int = dataList.size
@@ -43,5 +46,10 @@ class HistoryCustomAdapter(
         tvStatus.text = item.status
 
         return view
+    }
+
+    fun updateData(newList: List<HistoryModel>) {
+        dataList = newList
+        notifyDataSetChanged()
     }
 }
